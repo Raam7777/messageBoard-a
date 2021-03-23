@@ -5,6 +5,16 @@
 using namespace ariel;
 using namespace std;
 
+TEST_CASE("Test empty board")
+{
+    Board board;
+    CHECK(board.read(/*row*/ 0, /*column*/ 0, Direction::Horizontal, 0) == string(""));
+    CHECK(board.read(/*row*/ 1, /*column*/ 1, Direction::Vertical, 0) == string(""));
+    CHECK(board.read(/*row*/ 2, /*column*/ 2, Direction::Horizontal, 2) == string("__"));
+    CHECK(board.read(/*row*/ 3, /*column*/ 3, Direction::Vertical, 3) == string("___"));
+}
+
+
 TEST_CASE("Test Vertical")
 {
     Board board;
